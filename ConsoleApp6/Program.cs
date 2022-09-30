@@ -8,16 +8,26 @@ using System.ComponentModel.DataAnnotations;
 namespace ConsoleApp2
 {
     class ConstantsAndFields
-    {   
+    {
         public const int constant = 5;
         public readonly int[] masToRead = { 2, 3, 4, 5 };
-        private int[] masPrivate = new int[4];
-        public int[] mas3 = new int[4];
-        protected int[] mas4 = new int[4];
-        internal int[] mas5 = new int[4];
-        protected internal int[] mas6 = new int[4];
-        private protected int[] mas7 = new int[4];
-        public static int[] mas8 = new int[4];
+        private int priv = 0;
+        public int publ = 0;
+        protected int protect;
+        internal int inter = 0;
+        protected internal int protectIter = 0;
+        private protected int privProtect = 0;
+        public static int publStat = 0;
+
+        public ConstantsAndFields(int n)
+        {
+            masToRead[1] = n;
+        }
+
+        public int Priv()
+        {
+            return priv;
+        }
     }
 
     class Program
